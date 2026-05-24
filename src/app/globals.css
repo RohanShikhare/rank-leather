@@ -7,8 +7,6 @@
   --royal-blue: #071a3e;
   --offwhite: #0b0b11;
   --black: #020617;
-  --font-dm-mono: var(--font-dm-mono);
-  --font-zodiak: var(--font-zodiak);
 }
 
 @theme inline {
@@ -22,7 +20,9 @@ body {
   margin: 0;
   background: var(--background);
   color: var(--foreground);
-  font-family: var(--font-dm-mono), ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  font-family:
+    var(--font-dm-mono), ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
+    "Liberation Mono", "Courier New", monospace;
 }
 
 html {
@@ -39,13 +39,12 @@ h6 {
 }
 
 .font-dm-mono {
-  font-family: var(--font-dm-mono), ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  font-family: var(--font-dm-mono);
 }
 
 .font-zodiak {
-  font-family: var(--font-zodiak), Georgia, serif;
+  font-family: var(--font-zodiak);
 }
-
 
 .uppercase-tracking {
   text-transform: uppercase;
@@ -109,4 +108,43 @@ html {
 
 .bg-red-accent {
   background-color: var(--accent);
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes marquee {
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(-33.333%);
+  }
+}
+
+.animate-marquee {
+  width: max-content;
+  animation: marquee 28s linear infinite;
+}
+
+@keyframes testimonialProgress {
+  from {
+    width: 0%;
+  }
+
+  to {
+    width: 100%;
+  }
+}
+
+.testimonial-progress {
+  animation: testimonialProgress 12s linear forwards;
 }

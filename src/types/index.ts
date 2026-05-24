@@ -40,10 +40,8 @@ export type Testimonial = {
 };
 
 export type ClientLogo = {
-  id: string;
   name: string;
   logo: string;
-  alt: string;
 };
 
 export type GalleryImage = {

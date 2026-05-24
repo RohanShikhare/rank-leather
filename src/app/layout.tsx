@@ -34,7 +34,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={`${dmMono.variable} ${zodiak.variable} scroll-smooth`}>
-      <body suppressHydrationWarning className="min-h-screen bg-offwhite text-slate-950 antialiased">
+      <body suppressHydrationWarning className="min-h-screen bg-offwhite antialiased">
         <div className="flex min-h-screen flex-col">
           <Header />
           {children}

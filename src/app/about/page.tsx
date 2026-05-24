@@ -2,9 +2,8 @@ import Image from "next/image";
 import Banner from "@/components/Banner";
 import SectionTitle from "@/components/SectionTitle";
 import GalleryGrid from "@/components/GalleryGrid";
-import ClientLogos from "@/components/ClientLogos";
-import { clients } from "@/data/clients";
 import { galleryImages } from "@/data/gallery";
+import Clients from "@/components/Clients";
 
 export const metadata = {
   title: "About | RANK Leather",
@@ -73,14 +72,7 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <section className="border-t border-white/10 bg-slate-50 py-20">
-        <div className="mx-auto max-w-7xl px-6 sm:px-8 lg:px-12">
-          <SectionTitle title="Clients" subtitle="Collaborations and creative partnerships." />
-          <div className="mt-12">
-            <ClientLogos logos={clients} />
-          </div>
-        </div>
-      </section>
+      <Clients/>
     </main>
   );
 }

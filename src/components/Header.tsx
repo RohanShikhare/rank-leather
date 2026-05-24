@@ -19,23 +19,73 @@ export default function Header() {
   const pathname = usePathname();
 
   return (
-    <header className="absolute inset-x-0 top-0 z-50 bg-transparent px-4 py-4 sm:px-8">
+    <header className="absolute inset-x-0 top-0 z-50 bg-transparent px-4 py-4 sm:px-16 sm:py-12">
       <div className="mx-auto flex max-w-7xl items-center justify-between text-white">
-        <Link href="/" className="inline-flex items-center gap-3 font-dm-mono text-sm uppercase tracking-[0.35em] text-white">
-          <Image src={Rank} alt="RANK logo" width={130} height={40} className="h-auto w-auto" priority />
+        <Link
+          href="/"
+          className="inline-flex items-center gap-3 font-dm-mono uppercase tracking-[0.35em] text-white"
+        >
+          <Image
+            src={Rank}
+            alt="RANK logo"
+            width={150}
+            height={45}
+            className="h-[25px] w-auto"
+            priority
+          />
         </Link>
 
-        <nav className="hidden items-center gap-8 font-dm-mono text-sm uppercase tracking-[0.35em] md:flex">
+        {/* <nav className="hidden items-center gap-8 font-dm-mono text-[14px] uppercase tracking-[0.35em] md:flex">
           {navigation.map((link) => {
-            const isActive = pathname === link.href || (link.href !== "/" && pathname?.startsWith(link.href));
+            const isActive =
+              pathname === link.href ||
+              (link.href !== "/" && pathname?.startsWith(link.href));
+
             return (
               <Link
                 key={link.href}
                 href={link.href}
-                className={`transition-all duration-200 ${isActive ? "text-red-accent" : "text-white/80 hover:text-white"} hover:tracking-[0.45em]`}
+                className={`transform transition-all duration-300 ${
+                  isActive
+                    ? "text-red-accent"
+                    : "text-white/80 hover:-translate-y-1 hover:text-white"
+                }`}
               >
                 {link.label}
               </Link>
+            );
+          })}
+        </nav> */}
+
+        <nav className="hidden items-center gap-8 font-dm-mono text-[14px] uppercase tracking-[0.35em] md:flex">
+          {navigation.map((link) => {
+            const isActive =
+              pathname === link.href ||
+              (link.href !== "/" && pathname?.startsWith(link.href));
+
+            return (
+              <div key={link.href} className="group relative overflow-hidden">
+                <Link
+                  href={link.href}
+                  className={`relative block transition-colors duration-300 ${
+                    isActive
+                      ? "text-red-accent"
+                      : "text-white/80 group-hover:text-white"
+                  }`}
+                >
+                  <span className="block transition-all duration-300 group-hover:-translate-y-full group-hover:opacity-0">
+                    {link.label}
+                  </span>
+
+                  <span
+                    className={`absolute left-0 top-0 block translate-y-full opacity-0 transition-all duration-300 group-hover:translate-y-0 group-hover:opacity-100 ${
+                      isActive ? "text-red-accent" : "text-white"
+                    }`}
+                  >
+                    {link.label}
+                  </span>
+                </Link>
+              </div>
             );
           })}
         </nav>
@@ -48,12 +98,24 @@ export default function Header() {
         >
           <span className="h-5 w-5">
             {menuOpen ? (
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="h-5 w-5">
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2"
+                className="h-5 w-5"
+              >
                 <path d="M18 6 6 18" />
                 <path d="M6 6l12 12" />
               </svg>
             ) : (
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="h-5 w-5">
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2"
+                className="h-5 w-5"
+              >
                 <path d="M4 7h16" />
                 <path d="M4 12h16" />
                 <path d="M4 17h16" />
@@ -65,9 +127,11 @@ export default function Header() {
 
       {menuOpen ? (
         <div className="absolute inset-x-4 top-full z-40 rounded-3xl border border-white/10 bg-black/90 p-6 backdrop-blur-xl md:hidden">
-          <nav className="flex flex-col gap-4 font-dm-mono text-sm uppercase tracking-[0.35em] text-white">
+          <nav className="flex flex-col gap-4 font-dm-mono text-[14px] uppercase tracking-[0.35em] text-white">
             {navigation.map((link) => {
-              const isActive = pathname === link.href || (link.href !== "/" && pathname?.startsWith(link.href));
+              const isActive =
+                pathname === link.href ||
+                (link.href !== "/" && pathname?.startsWith(link.href));
               return (
                 <Link
                   key={link.href}
