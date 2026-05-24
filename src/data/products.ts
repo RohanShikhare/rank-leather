@@ -1,0 +1,58 @@
+import type { ProductItem } from "@/types";
+
+export const productItems: ProductItem[] = [
+  {
+    id: "heritage-wallet",
+    category: "heritage",
+    title: "Heritage Wallet",
+    description: "Structured leather wallet finished with subdued details and hand-rubbed edges.",
+    image: "/images/product-heritage-1.svg",
+    alt: "Premium heritage leather wallet",
+    price: "$420",
+  },
+  {
+    id: "heritage-brief",
+    category: "heritage",
+    title: "Heritage Brief",
+    description: "Executive brief tailored from deep black leather and elegant brass hardware.",
+    image: "/images/product-heritage-2.svg",
+    alt: "Leather briefcase",
+    price: "$1,280",
+  },
+  {
+    id: "atelier-tote",
+    category: "atelier",
+    title: "Atelier Tote",
+    description: "Soft silhouette with refined construction for modern city movement.",
+    image: "/images/product-atelier-1.svg",
+    alt: "Leather tote bag",
+    price: "$560",
+  },
+  {
+    id: "atelier-pouch",
+    category: "atelier",
+    title: "Atelier Pouch",
+    description: "Compact leather accessory with satin-lined interior and polished closure.",
+    image: "/images/product-atelier-2.svg",
+    alt: "Leather accessory pouch",
+    price: "$210",
+  },
+  {
+    id: "signature-clutch",
+    category: "signature",
+    title: "Signature Clutch",
+    description: "Hand-stitched clutch with bold geometry and premium red lining.",
+    image: "/images/product-signature-1.svg",
+    alt: "Leather clutch",
+    price: "$730",
+  },
+  {
+    id: "signature-satchel",
+    category: "signature",
+    title: "Signature Satchel",
+    description: "Limited-edition satchel with luxurious contrast stitching.",
+    image: "/images/product-signature-2.svg",
+    alt: "Leather satchel",
+    price: "$1,150",
+  },
+];

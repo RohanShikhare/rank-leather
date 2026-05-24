@@ -1,26 +1,112 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #0b0b11;
+  --foreground: #f7f3eb;
+  --accent: #c3201f;
+  --royal-blue: #071a3e;
+  --offwhite: #0b0b11;
+  --black: #020617;
+  --font-dm-mono: var(--font-dm-mono);
+  --font-zodiak: var(--font-zodiak);
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --font-sans: var(--font-dm-mono);
 }
 
 body {
+  min-height: 100vh;
+  margin: 0;
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-dm-mono), ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-zodiak), Georgia, serif;
+}
+
+.font-dm-mono {
+  font-family: var(--font-dm-mono), ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+}
+
+.font-zodiak {
+  font-family: var(--font-zodiak), Georgia, serif;
+}
+
+
+.uppercase-tracking {
+  text-transform: uppercase;
+  letter-spacing: 0.35em;
+}
+
+::selection {
+  background: rgba(195, 32, 31, 0.15);
+}
+
+button,
+input,
+textarea {
+  font: inherit;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+.text-royal-blue {
+  color: var(--royal-blue);
+}
+
+.text-red-accent {
+  color: var(--accent);
+}
+
+.bg-red-accent {
+  background-color: var(--accent);
+}
+
+::selection {
+  background: rgba(195, 32, 31, 0.15);
+}
+
+button,
+input,
+textarea {
+  font: inherit;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+body,
+html {
+  background: var(--background);
+}
+
+.text-royal-blue {
+  color: var(--royal-blue);
+}
+
+.text-red-accent {
+  color: var(--accent);
+}
+
+.bg-red-accent {
+  background-color: var(--accent);
 }
