@@ -11,14 +11,14 @@ export type ProductCategory = {
   alt: string;
 };
 
-export type ProductItem = {
+export type ProductImage = {
   id: string;
-  category: string;
-  title: string;
-  description: string;
   image: string;
   alt: string;
-  price: string;
+};
+
+export type ProductItems = {
+  [key: string]: ProductImage[];
 };
 
 export type BlogPost = {
@@ -43,9 +43,4 @@ export type ClientLogo = {
   logo: string;
 };
 
-export type GalleryImage = {
-  id: string;
-  title: string;
-  image: string;
-  alt: string;
-};
+

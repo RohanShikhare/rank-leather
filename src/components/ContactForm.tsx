@@ -60,7 +60,7 @@ export default function ContactForm() {
   return (
     <form className="space-y-6 rounded-3xl border border-black/10 bg-white p-8 shadow-sm" onSubmit={handleSubmit}>
       <div className="grid gap-6 sm:grid-cols-2">
-        <label className="block text-sm font-semibold text-slate-900">
+        <label className="block text-xs sm:text-sm font-semibold text-slate-900">
           Name
           <input
             name="name"
@@ -68,10 +68,10 @@ export default function ContactForm() {
             required
             value={formData.name}
             onChange={handleChange}
-            className="mt-3 w-full rounded-3xl border border-slate-200 bg-slate-50 px-4 py-3 text-sm text-slate-900 outline-none transition focus:border-red-accent/50 focus:ring-2 focus:ring-red-accent/10"
+            className="mt-3 w-full rounded-3xl border border-slate-200 bg-slate-50 px-4 py-3 text-xs sm:text-sm text-slate-900 outline-none transition focus:border-red-accent/50 focus:ring-2 focus:ring-red-accent/10"
           />
         </label>
-        <label className="block text-sm font-semibold text-slate-900">
+        <label className="block text-xs sm:text-sm font-semibold text-slate-900">
           Email
           <input
             name="email"
@@ -79,11 +79,11 @@ export default function ContactForm() {
             required
             value={formData.email}
             onChange={handleChange}
-            className="mt-3 w-full rounded-3xl border border-slate-200 bg-slate-50 px-4 py-3 text-sm text-slate-900 outline-none transition focus:border-red-accent/50 focus:ring-2 focus:ring-red-accent/10"
+            className="mt-3 w-full rounded-3xl border border-slate-200 bg-slate-50 px-4 py-3 text-xs sm:text-sm text-slate-900 outline-none transition focus:border-red-accent/50 focus:ring-2 focus:ring-red-accent/10"
           />
         </label>
       </div>
-      <label className="block text-sm font-semibold text-slate-900">
+      <label className="block text-xs sm:text-sm font-semibold text-slate-900">
         Message
         <textarea
           name="message"
@@ -91,13 +91,13 @@ export default function ContactForm() {
           rows={6}
           value={formData.message}
           onChange={handleChange}
-          className="mt-3 w-full rounded-3xl border border-slate-200 bg-slate-50 px-4 py-4 text-sm text-slate-900 outline-none transition focus:border-red-accent/50 focus:ring-2 focus:ring-red-accent/10"
+          className="mt-3 w-full rounded-3xl border border-slate-200 bg-slate-50 px-4 py-4 text-xs sm:text-sm text-slate-900 outline-none transition focus:border-red-accent/50 focus:ring-2 focus:ring-red-accent/10"
         />
       </label>
       <button
         type="submit"
         disabled={isSending}
-        className="inline-flex items-center justify-center rounded-full bg-red-accent px-6 py-3 text-sm font-semibold text-black transition hover:bg-red-600 disabled:cursor-not-allowed disabled:opacity-60"
+        className="inline-flex items-center justify-center rounded-full bg-red-accent px-6 py-3 text-xs sm:text-sm font-semibold text-black transition hover:bg-red-600 disabled:cursor-not-allowed disabled:opacity-60"
       >
         {isSending ? "Sending…" : "Send Message"}
       </button>

@@ -28,7 +28,7 @@ export default function ProductCard({ category }: ProductCardProps) {
         <div className="absolute inset-0 flex flex-col justify-end p-6 space-y-4">
           
           <div className="space-y-3">
-            <h3 className="line-clamp-1 font-zodiak text-[1.7rem] text-white">
+            <h3 className="line-clamp-1 font-zodiak text-base sm:text-lg lg:text-[1.7rem] text-white">
               {category.title}
             </h3>
           </div>

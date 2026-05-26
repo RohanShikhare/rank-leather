@@ -11,7 +11,7 @@ import RankStore from "@/../public/images/rank-store.webp";
 import FeaturedProducts from "@/components/FeaturedProducts";
 
 export const metadata = {
-  title: "RANK | Premium Leather Store",
+  title: "RANK | Manufacturer of Leather & Faux Leather Goods",
   description:
     "RANK is a premium leather brand showcasing bespoke collections, refined product categories, and artisanal craftsmanship.",
 };
@@ -20,8 +20,8 @@ export default function HomePage() {
   return (
     <main className="overflow-hidden">
       <Banner
-        title="RANK"
-        subtitle="Luxury leather crafted for the quiet collector."
+        title="RANK - Leather & Faux Leather Manufacturer."
+        subtitle="Premium leather goods built for modern businesses, travel, gifting, and everyday use."
         backgroundImage="/images/hero-banner.svg"
       />
 
@@ -31,11 +31,11 @@ export default function HomePage() {
           {/* Intro Paragraph */}
           <div className="flex justify-center">
             <div className="max-w-4xl animate-[fadeIn_1s_ease_forwards] p-2 sm:p-4">
-              <p className="font-dm-mono font-semibold text-[12px] uppercase tracking-[0.35em] text-red-accent">
+              <p className="font-dm-mono font-semibold text-[11px] sm:text-[12px] uppercase tracking-[0.35em] text-red-accent">
                 Who we are
               </p>
 
-              <p className="mt-6 font-zodiak text-[1.6rem] leading-[1.8] text-white sm:text-[1.6rem]">
+              <p className="mt-6 font-zodiak text-base sm:text-lg lg:text-[1.6rem] leading-[1.8] text-white">
                 RANK is a premium leather manufacturer and seller specializing
                 in handcrafted leather goods, corporate gifting products, office
                 bags, wallets, travel accessories, folders, and lifestyle
@@ -62,18 +62,18 @@ export default function HomePage() {
             {/* Right Content */}
             <div className="space-y-8">
               <div className="space-y-5">
-                <p className="font-zodiak text-[16px] uppercase tracking-[0.35em] text-red-accent">
+                <p className="font-zodiak text-[14px] sm:text-base lg:text-[16px] uppercase tracking-[0.35em] text-red-accent">
                   Premium Craftsmanship
                 </p>
 
-                <h2 className="font-dm-mono text-[16px] leading-8 text-white">
+                <h2 className="font-dm-mono text-sm sm:text-base lg:text-[16px] leading-8 text-white">
                   Leather essentials built for modern businesses and timeless
                   everyday use.
                 </h2>
               </div>
 
               <div className="space-y-6">
-                <p className="font-dm-mono text-[16px] leading-8 text-white">
+                <p className="font-dm-mono text-sm sm:text-base lg:text-[16px] leading-8 text-white">
                   From premium office bags and RFID wallets to passport covers,
                   trolley bags, laptop sleeves, folders, gifting sets, and
                   travel accessories, every RANK product is designed with
@@ -81,7 +81,7 @@ export default function HomePage() {
                   durability.
                 </p>
 
-                <p className="font-dm-mono text-[16px] leading-8 text-white">
+                <p className="font-dm-mono text-sm sm:text-base lg:text-[16px] leading-8 text-white hidden md:block ">
                   Our manufacturing process focuses on combining utility,
                   minimal luxury, and customization — delivering leather and
                   faux leather products that represent professionalism,
@@ -99,13 +99,13 @@ export default function HomePage() {
       <Clients />
 
       {/* Testimonials */}
-      <section className="border-t border-white/10 bg-slate-50 py-20">
+      <section className="border-t border-white/10 bg-slate-50 py-10 md:py-20">
         <div className="mx-auto max-w-7xl px-6 sm:px-8 lg:px-12">
           <SectionTitle
             title="Testimonials"
             subtitle="Voices that recognize our refined approach."
           />
-          <div className="mt-10 ">
+          <div>
             <TestimonialCard testimonials={testimonials} />
           </div>
         </div>
@@ -116,15 +116,15 @@ export default function HomePage() {
       {/* Discover RANK */}
       <section className="border-t border-white/10 bg-black py-20 text-center text-white">
         <div className="mx-auto max-w-4xl px-6 sm:px-8 lg:px-12">
-          <p className="text-sm uppercase font-semibold tracking-[0.35em] text-red-accent">
+          <p className="text-xs sm:text-sm uppercase font-semibold tracking-[0.35em] text-red-accent">
             Discover RANK
           </p>
-          <h2 className="mt-4 text-3xl font-semibold leading-tight tracking-tight sm:text-4xl">
+          <h2 className="mt-4 text-xl sm:text-2xl lg:text-4xl font-semibold leading-tight tracking-tight">
             Immerse yourself in premium leather design built to endure.
           </h2>
           <Link
             href="/products"
-            className="mt-8 inline-flex items-center rounded-full bg-red-accent px-8 py-4 text-sm font-semibold text-black transition-all duration-300 hover:-translate-y-1 hover:scale-[1.02] hover:bg-red-600 hover:shadow-[0_10px_30px_rgba(195,32,31,0.35)]"
+            className="mt-8 inline-flex items-center rounded-full bg-red-accent px-6 sm:px-8 py-3 sm:py-4 text-xs sm:text-sm font-semibold text-black transition-all duration-300 hover:-translate-y-1 hover:scale-[1.02] hover:bg-red-600 hover:shadow-[0_10px_30px_rgba(195,32,31,0.35)]"
           >
             Explore Collections
           </Link>

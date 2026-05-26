@@ -5,7 +5,7 @@ import { blogPosts } from "@/data/blogs";
 
 export const metadata = {
   title: "Blogs | RANK Leather",
-  description: "Read insights from the RANK studio on leather craft, color, and design philosophy.",
+  description: "Read insights from the RANK on leather craft, color, and design philosophy.",
 };
 
 export default function BlogsPage() {

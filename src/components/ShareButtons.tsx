@@ -35,7 +35,7 @@ export default function ShareButtons({ title, url }: ShareButtonsProps) {
           key={link.label}
           type="button"
           onClick={link.isCopy ? copyLink : () => window.open(link.href, "_blank", "noopener,noreferrer")}
-          className="rounded-full border border-black/10 bg-white px-4 py-2 text-sm font-semibold text-slate-900 transition hover:border-red-accent hover:text-red-accent"
+          className="rounded-full border border-black/10 bg-white px-3 sm:px-4 py-2 text-xs sm:text-sm font-semibold text-slate-900 transition hover:border-red-accent hover:text-red-accent"
         >
           {link.label}
         </button>

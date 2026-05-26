@@ -14,8 +14,8 @@ export default function BlogCard({ post }: BlogCardProps) {
       </div>
       <div className="space-y-3 p-6">
         <p className="text-xs uppercase tracking-[0.35em] text-red-accent">{post.date}</p>
-        <h3 className="text-xl font-semibold tracking-tight text-slate-950">{post.title}</h3>
-        <p className="text-sm leading-6 text-slate-600">{post.excerpt}</p>
+        <h3 className="text-base sm:text-lg lg:text-xl font-semibold tracking-tight text-slate-950">{post.title}</h3>
+        <p className="text-xs sm:text-sm lg:text-sm leading-6 text-slate-600">{post.excerpt}</p>
       </div>
     </Link>
   );

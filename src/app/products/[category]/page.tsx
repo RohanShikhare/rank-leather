@@ -13,26 +13,49 @@ export async function generateStaticParams() {
   }));
 }
 
-export async function generateMetadata({ params }: { params: { category: string } }) {
-  const category = productCategories.find((item) => item.slug === params.category);
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ category: string }>;
+}) {
+  const { category: categorySlug } = await params;
+
+  const category = productCategories.find(
+    (item) => item.slug === categorySlug
+  );
+
   return {
-    title: category ? `${category.title} | RANK Leather` : "Product Category | RANK Leather",
-    description: category ? category.description : "Explore our premium leather categories.",
+    title: category
+      ? `${category.title} | RANK Leather`
+      : "Product Category | RANK Leather",
+
+    description: category
+      ? category.description
+      : "Explore our premium leather categories.",
   };
 }
 
-export default function ProductCategoryPage({ params }: { params: { category: string } }) {
-  const category = productCategories.find((item) => item.slug === params.category);
+export default async function ProductCategoryPage({
+  params,
+}: {
+  params: Promise<{ category: string }>;
+}) {
+  const { category: categorySlug } = await params;
+
+  const category = productCategories.find(
+    (item) => item.slug === categorySlug
+  );
 
   if (!category) {
     notFound();
   }
 
-  const items = productItems.filter((item) => item.category === category.slug);
-  const pageUrl = `https://rank-leather.example.com/products/${category.slug}`;
+  const items = productItems[category.slug] || [];
+
+  const pageUrl = `https://rankleather.in/products/${category.slug}`;
 
   return (
-    <main className="overflow-hidden">
+    <main className="overflow-hidden bg-white">
       <Banner
         title="Collection"
         subtitle={category.title}
@@ -40,35 +63,57 @@ export default function ProductCategoryPage({ params }: { params: { category: st
         breadcrumbs={[
           { label: "Home", href: "/" },
           { label: "Products", href: "/products" },
-          { label: category.title, href: `/products/${category.slug}` },
+          {
+            label: category.title,
+            href: `/products/${category.slug}`,
+          },
         ]}
       />
 
       <section className="mx-auto max-w-7xl px-6 py-20 sm:px-8 lg:px-12">
-        <div className="grid gap-12 lg:grid-cols-[0.8fr_0.95fr] lg:items-start">
-          <div className="space-y-6">
-            <SectionTitle title="Category" subtitle={category.title} />
-            <p className="max-w-2xl text-base leading-8 text-slate-600">{category.description}</p>
-            <div className="flex flex-wrap gap-3">
-              <ShareButtons title={category.title} url={pageUrl} />
+        <div className="space-y-12">
+          
+          {/* Top Content */}
+          <div className="grid gap-12 lg:grid-cols-[0.8fr_0.95fr] lg:items-start">
+            <div className="space-y-6">
+              <SectionTitle
+                title="Category"
+                subtitle={category.title}
+              />
+
+              <p className="max-w-2xl text-xs leading-8 text-slate-600 sm:text-sm lg:text-base">
+                {category.description}
+              </p>
+
+              <BackButton
+                href="/products"
+                label="Back to Products"
+              />
             </div>
-            <BackButton href="/products" label="Back to Products" />
           </div>
 
-          <div className="grid gap-6">
+          {/* Gallery */}
+          <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
             {items.map((item) => (
-              <article key={item.id} className="overflow-hidden rounded-3xl border border-black/10 bg-white shadow-sm transition hover:-translate-y-1">
-                <div className="relative h-80 bg-slate-950">
-                  <Image src={item.image} alt={item.alt} fill className="object-cover object-center" />
+              <div
+                key={item.id}
+                className="group relative overflow-hidden rounded-[1.5rem]"
+              >
+                <div className="relative aspect-[4/5] overflow-hidden bg-slate-100">
+                  <Image
+                    src={item.image}
+                    alt={item.alt}
+                    fill
+                    sizes="(max-width: 640px) 100vw,
+                           (max-width: 1024px) 50vw,
+                           33vw"
+                    className="object-cover object-center transition-transform duration-700 group-hover:scale-105"
+                  />
                 </div>
-                <div className="p-8">
-                  <p className="text-sm uppercase tracking-[0.35em] text-red-accent">{item.price}</p>
-                  <h2 className="mt-3 text-2xl font-semibold text-slate-950">{item.title}</h2>
-                  <p className="mt-4 text-sm leading-7 text-slate-600">{item.description}</p>
-                </div>
-              </article>
+              </div>
             ))}
           </div>
+
         </div>
       </section>
     </main>

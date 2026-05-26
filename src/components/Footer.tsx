@@ -32,27 +32,33 @@ export default function Footer() {
             href="https://maps.google.com/?q=5,+Laxmibai+Dharmaji+Chawl,+opp.+BMC+school+Kala+killa,+Dharavi,+Mumbai,+Maharashtra+400017"
             target="_blank"
             rel="noopener noreferrer"
-            className="block max-w-sm leading-7 text-white/75 transition-colors duration-300 hover:text-white"
+            className="block max-w-sm text-xs sm:text-sm leading-7 text-white/75 transition-colors duration-300 hover:text-white"
           >
             5, Laxmibai Dharmaji Chawl, opp. BMC school Kala killa, Dharavi,
             Mumbai, Maharashtra 400017
           </Link>
 
-          <div className="space-y-2 text-sm text-white/70">
+          <div className="space-y-2 text-xs sm:text-sm text-white/70">
             <Link
               href="tel:+919619184901"
               className="transition-colors duration-300 hover:text-white"
             >
               +91 96191 84901
             </Link>
+            <Link
+              href="tel:+919869184901"
+              className="transition-colors duration-300 hover:text-white"
+            >
+              +91 98691 84901
+            </Link>
           </div>
         </div>
 
         <div className="space-y-4">
-          <p className="font-semibold uppercase tracking-[0.35em] text-white">
+          <p className="font-semibold text-xs sm:text-sm uppercase tracking-[0.35em] text-white">
             Follow
           </p>
-          <div className="grid gap-3 text-sm text-white/70">
+          <div className="grid gap-3 text-xs sm:text-sm text-white/70">
             <a
               href="https://www.instagram.com/rankleather.in"
               className="transition hover:text-white"
@@ -81,10 +87,10 @@ export default function Footer() {
         </div>
 
         <div className="space-y-4">
-          <p className="font-semibold uppercase tracking-[0.35em] text-white">
+          <p className="font-semibold text-xs sm:text-sm uppercase tracking-[0.35em] text-white">
             Explore
           </p>
-          <div className="grid gap-3 text-sm text-white/70">
+          <div className="grid gap-3 text-xs sm:text-sm text-white/70">
             {footerLinks.map((link) => (
               <Link
                 key={link.href}

@@ -10,9 +10,9 @@ export const metadata = {
 
 export default function ProductsPage() {
   return (
-    <main className="overflow-hidden">
+    <main className="overflow-hidden bg-white">
       <Banner
-        title="Collections"
+        title="Our Collections"
         subtitle="Leather categories with depth and distinction."
         backgroundImage="/images/hero-banner.svg"
       />

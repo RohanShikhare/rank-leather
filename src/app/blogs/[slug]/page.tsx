@@ -44,15 +44,15 @@ export default function BlogDetailPage({ params }: { params: { slug: string } })
       <section className="mx-auto max-w-6xl px-6 py-20 sm:px-8 lg:px-12">
         <article className="space-y-10">
           <div className="rounded-[2rem] border border-black/10 bg-white overflow-hidden shadow-sm">
-            <div className="relative h-[420px] bg-slate-950">
+            <div className="relative h-[280px] sm:h-[350px] lg:h-[420px] bg-slate-950">
               <Image src={post.image} alt={post.alt} fill className="object-cover object-center" />
             </div>
           </div>
 
           <div className="space-y-6">
-            <p className="text-sm uppercase tracking-[0.35em] text-red-accent">{post.date}</p>
-            <h1 className="text-4xl font-semibold leading-tight tracking-tight text-slate-950 sm:text-5xl">{post.title}</h1>
-            <div className="space-y-6 text-slate-700 leading-8">
+            <p className="text-xs sm:text-sm uppercase tracking-[0.35em] text-red-accent">{post.date}</p>
+            <h1 className="text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-semibold leading-tight tracking-tight text-slate-950">{post.title}</h1>
+            <div className="space-y-6 text-xs sm:text-sm lg:text-base text-slate-700 leading-8">
               {post.content.split("\n\n").map((paragraph) => (
                 <p key={paragraph}>{paragraph}</p>
               ))}

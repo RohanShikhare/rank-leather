@@ -38,10 +38,10 @@ export default function TestimonialCard({
   };
 
   return (
-    <section className="relative overflow-hidden rounded-[2rem] border border-white/10 bg-white/5 p-8 backdrop-blur-sm sm:p-12">
+    <section className="relative overflow-hidden rounded-[2rem] border border-white/10 bg-white/5 py-8 backdrop-blur-sm md:p-12">
       
       {/* Quote Icon */}
-      <div className="font-zodiak text-[7rem] leading-none text-black">
+      <div className="font-zodiak text-4xl sm:text-5xl lg:text-[7rem] leading-none text-black">
         “
       </div>
 
@@ -50,7 +50,7 @@ export default function TestimonialCard({
         key={activeIndex}
         className="animate-[fadeIn_0.8s_ease] space-y-10"
       >
-        <p className="font-zodiak text-[1.8rem] leading-[1.7] text-black sm:text-[2.2rem]">
+        <p className="font-zodiak text-lg sm:text-2xl lg:text-[2.2rem] leading-[1.7] text-black">
           {activeTestimonial.quote}
         </p>
 

@@ -39,10 +39,10 @@ export default function Banner({ title, subtitle, backgroundImage, overlay = "bg
             </nav>
           ) : null}
           <div className="space-y-6">
-            <p className="animate-[fadeIn_1s_ease_forwards] font-dm-mono text-[14px] uppercase tracking-[0.45em] text-red-accent">
+            <p className="animate-[fadeIn_1s_ease_forwards] font-dm-mono text-[10px] md:text-[14px] uppercase tracking-[0.45em] text-red-accent">
               {title}
             </p>
-            <h1 className="animate-[fadeIn_1s_ease_forwards] font-zodiak text-[38px] leading-tight tracking-[-0.03em] text-white sm:text-[56px] md:text-[80px] lg:text-[80px]">
+            <h1 className="animate-[fadeIn_1s_ease_forwards] font-zodiak text-[20px] leading-tight tracking-[-0.03em] text-white md:text-[35px] lg:text-[45px]">
               {subtitle}
             </h1>
           </div>
