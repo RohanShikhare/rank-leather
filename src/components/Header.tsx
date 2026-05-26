@@ -19,7 +19,7 @@ export default function Header() {
   const pathname = usePathname();
 
   return (
-    <header className="absolute inset-x-0 top-0 z-50 bg-transparent px-4 py-4 sm:px-16 sm:py-12">
+    <header className="absolute inset-x-0 top-0 z-50 bg-transparent px-4 py-4 sm:px-16 sm:py-10">
       <div className="mx-auto flex max-w-7xl items-center justify-between text-white">
         <Link
           href="/"
@@ -29,33 +29,12 @@ export default function Header() {
             src={Rank}
             alt="RANK logo"
             width={150}
-            height={45}
-            className="h-[25px] w-auto"
+            height={65}
+            // className="h-[25px] w-auto"
             priority
           />
         </Link>
 
-        {/* <nav className="hidden items-center gap-8 font-dm-mono text-[14px] uppercase tracking-[0.35em] md:flex">
-          {navigation.map((link) => {
-            const isActive =
-              pathname === link.href ||
-              (link.href !== "/" && pathname?.startsWith(link.href));
-
-            return (
-              <Link
-                key={link.href}
-                href={link.href}
-                className={`transform transition-all duration-300 ${
-                  isActive
-                    ? "text-red-accent"
-                    : "text-white/80 hover:-translate-y-1 hover:text-white"
-                }`}
-              >
-                {link.label}
-              </Link>
-            );
-          })}
-        </nav> */}
 
         <nav className="hidden items-center gap-8 font-dm-mono text-[14px] uppercase tracking-[0.35em] md:flex">
           {navigation.map((link) => {
