@@ -4,6 +4,7 @@ export type Breadcrumb = {
 };
 
 export type ProductCategory = {
+  id: string;
   slug: string;
   title: string;
   description: string;

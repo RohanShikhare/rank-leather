@@ -2,7 +2,6 @@ import Image from "next/image";
 import { notFound } from "next/navigation";
 import Banner from "@/components/Banner";
 import SectionTitle from "@/components/SectionTitle";
-import ShareButtons from "@/components/ShareButtons";
 import BackButton from "@/components/BackButton";
 import { productCategories } from "@/data/categories";
 import { productItems } from "@/data/products";
@@ -20,9 +19,7 @@ export async function generateMetadata({
 }) {
   const { category: categorySlug } = await params;
 
-  const category = productCategories.find(
-    (item) => item.slug === categorySlug
-  );
+  const category = productCategories.find((item) => item.slug === categorySlug);
 
   return {
     title: category
@@ -42,15 +39,13 @@ export default async function ProductCategoryPage({
 }) {
   const { category: categorySlug } = await params;
 
-  const category = productCategories.find(
-    (item) => item.slug === categorySlug
-  );
+  const category = productCategories.find((item) => item.slug === categorySlug);
 
   if (!category) {
     notFound();
   }
 
-  const items = productItems[category.slug] || [];
+  const items = productItems[category.id] || [];
 
   const pageUrl = `https://rankleather.in/products/${category.slug}`;
 
@@ -72,48 +67,42 @@ export default async function ProductCategoryPage({
 
       <section className="mx-auto max-w-7xl px-6 py-20 sm:px-8 lg:px-12">
         <div className="space-y-12">
-          
           {/* Top Content */}
           <div className="grid gap-12 lg:grid-cols-[0.8fr_0.95fr] lg:items-start">
             <div className="space-y-6">
-              <SectionTitle
-                title="Category"
-                subtitle={category.title}
-              />
+              <SectionTitle title="Category" subtitle={category.title} />
 
               <p className="max-w-2xl text-xs leading-8 text-slate-600 sm:text-sm lg:text-base">
                 {category.description}
               </p>
 
-              <BackButton
-                href="/products"
-                label="Back to Products"
-              />
+              <BackButton href="/products" label="Back to Products" />
             </div>
           </div>
 
           {/* Gallery */}
-          <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
-            {items.map((item) => (
-              <div
-                key={item.id}
-                className="group relative overflow-hidden rounded-[1.5rem]"
-              >
-                <div className="relative aspect-[4/5] overflow-hidden bg-slate-100">
-                  <Image
-                    src={item.image}
-                    alt={item.alt}
-                    fill
-                    sizes="(max-width: 640px) 100vw,
-                           (max-width: 1024px) 50vw,
-                           33vw"
-                    className="object-cover object-center transition-transform duration-700 group-hover:scale-105"
-                  />
+          <div className="grid grid-cols-2 gap-3 sm:grid-cols-2 sm:gap-4 lg:grid-cols-3">
+            {[...items]
+              .sort(() => Math.random() - 0.5)
+              .map((item) => (
+                <div
+                  key={item.id}
+                  className="group relative overflow-hidden rounded-[1rem] sm:rounded-[1.5rem]"
+                >
+                  <div className="relative aspect-square overflow-hidden bg-slate-100 rounded-[1rem] sm:rounded-[1.5rem]">
+                    <Image
+                      src={item.image}
+                      alt={item.alt}
+                      fill
+                      sizes="(max-width: 640px) 50vw,
+                   (max-width: 1024px) 50vw,
+                   33vw"
+                      className="object-contain p-2 transition-transform duration-700 group-hover:scale-105 sm:p-4 rounded-[1rem] sm:rounded-[1.5rem]"
+                    />
+                  </div>
                 </div>
-              </div>
-            ))}
+              ))}
           </div>
-
         </div>
       </section>
     </main>

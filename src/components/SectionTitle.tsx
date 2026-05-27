@@ -4,7 +4,11 @@ type SectionTitleProps = {
   className?: string;
 };
 
-export default function SectionTitle({ title, subtitle, className = "" }: SectionTitleProps) {
+export default function SectionTitle({
+  title,
+  subtitle,
+  className = "",
+}: SectionTitleProps) {
   return (
     <div className={`space-y-3 ${className}`}>
       <p className="font-dm-mono text-xs sm:text-sm uppercase tracking-[0.35em] text-red-accent">{title}</p>

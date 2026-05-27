@@ -10,10 +10,10 @@ export const metadata = {
 
 export default function BlogsPage() {
   return (
-    <main className="overflow-hidden">
+    <main className="overflow-hidden bg-white">
       <Banner
         title="Stories"
-        subtitle="Stories from the RANK atelier."
+        subtitle="Stories from the RANK leather studio."
         backgroundImage="/images/hero-banner.svg"
       />
 
