@@ -37,7 +37,10 @@ export default function AboutPage() {
       <Banner
         title="Behind RANK"
         subtitle="Behind the quiet, refined leather brand."
-        backgroundImage="/images/hero-banner.svg"
+        backgroundImage={{
+          desktop: "/images/banner/about-desktop.webp",
+          mobile: "/images/banner/about-mobile.webp",
+        }}
       />
 
       {/* story */}

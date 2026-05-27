@@ -6,7 +6,7 @@ export const blogPosts: BlogPost[] = [
     title: "Full-Grain vs. Premium Faux Leather: A Guide to Luxury Materials",
     date: "June 2026",
     excerpt: "Explore the unique characteristics of handcrafted natural leather and high-grade faux alternatives crafted by industry experts.",
-    image: "/images/blog/blog-4.webp",
+    image: "/images/blog/blog-1.webp",
     alt: "Comparison of premium leather and faux leather textures",
     content: `
 When investing in premium accessories, understanding your materials is paramount. As a leading manufacturer of leather goods, RANK Leather offers both traditional full-grain and innovative faux leather, each engineered for uncompromising luxury.
@@ -23,7 +23,7 @@ Whether you choose the heritage appeal of genuine leather or the forward-thinkin
     title: "The Art of Leather Care: Preserving Handcrafted Elegance",
     date: "July 2026",
     excerpt: "Expert maintenance tips from a leading leather manufacturer to ensure your premium goods last a lifetime.",
-    image: "/images/blog/blog-5.webp",
+    image: "/images/blog/blog-2.webp",
     alt: "Artisan applying conditioner to a handcrafted leather bag",
     content: `
 A handcrafted leather piece is an investment in enduring style. While RANK Leather rigorously tests every product for longevity, proper maintenance will extend the life and enhance the beauty of your premium accessories.
@@ -40,7 +40,7 @@ Proper storage also matters. When not in use, keep your leather and faux leather
     title: "Behind the Seams: Decades of Leather Manufacturing Excellence",
     date: "August 2026",
     excerpt: "Discover why discerning clients trust RANK Leather's experienced artisans for premium, precision manufacturing.",
-    image: "/images/blog/blog-6.webp",
+    image: "/images/blog/blog-3.webp",
     alt: "Skilled artisans working in the Rank Leather manufacturing facility",
     content: `
 True luxury cannot be mass-produced; it must be cultivated through experience, precision, and a relentless dedication to the craft. RANK Leather stands as a leading manufacturer because we treat every stitch as a testament to our legacy.

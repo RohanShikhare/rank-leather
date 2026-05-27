@@ -14,7 +14,10 @@ export default function BlogsPage() {
       <Banner
         title="Stories"
         subtitle="Stories from the RANK leather studio."
-        backgroundImage="/images/hero-banner.svg"
+        backgroundImage={{
+          desktop: "/images/banner/blog-desktop.webp",
+          mobile: "/images/banner/blog-mobile.webp",
+        }}
       />
 
       <section className="mx-auto max-w-7xl px-6 py-20 sm:px-8 lg:px-12">

@@ -29,7 +29,7 @@ export default function Footer() {
           </Link>
 
           <Link
-            href="https://maps.google.com/?q=5,+Laxmibai+Dharmaji+Chawl,+opp.+BMC+school+Kala+killa,+Dharavi,+Mumbai,+Maharashtra+400017"
+            href="https://maps.app.goo.gl/YpqVYesUscVpbxXw7"
             target="_blank"
             rel="noopener noreferrer"
             className="block max-w-sm text-xs sm:text-sm leading-7 text-white/75 transition-colors duration-300 hover:text-white"
@@ -78,7 +78,7 @@ export default function Footer() {
               WhatsApp
             </a>
             <a
-              href="mailto:adityakhade22@gmail.com"
+              href="mailto:khadeaditya22@gmail.com"
               className="transition hover:text-white"
             >
               Email

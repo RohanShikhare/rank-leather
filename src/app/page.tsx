@@ -22,11 +22,14 @@ export default function HomePage() {
       <Banner
         title="RANK - Leather & Faux Leather Manufacturer."
         subtitle="Premium leather goods built for modern businesses, travel, gifting, and everyday use."
-        backgroundImage="/images/hero-banner.svg"
+        backgroundImage={{
+          desktop: "/images/banner/home-desktop.webp",
+          mobile: "/images/banner/home-mobile.webp",
+        }}
       />
 
       {/* Who are we */}
-      <section className="mx-auto max-w-7xl px-6 py-24 sm:px-8 lg:px-12">
+      <section className="mx-auto max-w-7xl px-6 py-12 md:py-24 sm:px-8 lg:px-12">
         <div className="space-y-20">
           {/* Intro Paragraph */}
           <div className="flex justify-center">

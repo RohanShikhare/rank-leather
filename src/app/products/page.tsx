@@ -14,7 +14,10 @@ export default function ProductsPage() {
       <Banner
         title="Our Collections"
         subtitle="Leather categories with depth and distinction."
-        backgroundImage="/images/hero-banner.svg"
+        backgroundImage={{
+          desktop: "/images/banner/product-desktop.webp",
+          mobile: "/images/banner/product-mobile.webp",
+        }}
       />
 
       <section className="mx-auto max-w-7xl px-6 py-20 sm:px-8 lg:px-12">

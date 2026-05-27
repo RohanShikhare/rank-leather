@@ -30,7 +30,7 @@ export default function ContactForm() {
     setStatus("");
 
     try {
-      const response = await fetch("https://formsubmit.co/ajax/contact@rankleather.example.com", {
+      const response = await fetch("https://formsubmit.co/ajax/bullrideroriginal@gmail.com", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
