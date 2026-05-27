@@ -27,13 +27,6 @@ export default function Banner({
   return (
     <section className="relative min-h-screen w-full overflow-hidden bg-slate-950 text-white">
       <div className="absolute inset-0">
-        {/* <Image
-          src={backgroundImage}
-          alt={title}
-          fill
-          className="object-cover object-center"
-          priority
-        /> */}
         {typeof backgroundImage === "string" ? (
           <Image
             src={backgroundImage}

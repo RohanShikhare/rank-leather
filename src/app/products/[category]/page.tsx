@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import Image from "next/image";
 import { notFound } from "next/navigation";
 import Banner from "@/components/Banner";
@@ -16,19 +17,60 @@ export async function generateMetadata({
   params,
 }: {
   params: Promise<{ category: string }>;
-}) {
+}): Promise<Metadata> {
   const { category: categorySlug } = await params;
 
   const category = productCategories.find((item) => item.slug === categorySlug);
 
-  return {
-    title: category
-      ? `${category.title} | RANK Leather`
-      : "Product Category | RANK Leather",
+  if (!category) {
+    return {
+      title: "Product Category Not Found | RANK Leather",
+      description: "The product category you're looking for doesn't exist.",
+    };
+  }
 
-    description: category
-      ? category.description
-      : "Explore our premium leather categories.",
+  const categoryUrl = `https://rankleather.in/products/${category.slug}`;
+
+  return {
+    title: `${category.title} | Premium Leather ${category.title} | RANK`,
+    description: category.description,
+    keywords: [
+      category.title.toLowerCase(),
+      "leather",
+      "handcrafted",
+      "premium",
+      "quality leather goods",
+      "leather accessories",
+    ],
+    authors: [
+      { name: "RANK Leather", url: "https://rankleather.in" },
+    ],
+    creator: "RANK Leather",
+    publisher: "RANK Leather",
+    openGraph: {
+      type: "website",
+      locale: "en_IN",
+      url: categoryUrl,
+      siteName: "RANK Leather",
+      title: `${category.title} | Premium Leather ${category.title} | RANK`,
+      description: category.description,
+      images: [
+        {
+          url: `https://rankleather.in${category.image}`,
+          width: 1200,
+          height: 630,
+          alt: category.alt,
+          type: "image/webp",
+        },
+      ],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: `${category.title} | Premium Leather ${category.title} | RANK`,
+      description: category.description,
+      images: [`https://rankleather.in${category.image}`],
+      creator: "@rankleather.in",
+    },
   };
 }
 

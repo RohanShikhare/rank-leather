@@ -55,57 +55,6 @@ export default function Industries() {
           </div>
 
           {/* Right */}
-          {/* <div className="space-y-2 pt-20">
-            {industries.map((industry, index) => {
-              const isActive = activeIndustry === index;
-
-              return (
-                <div
-                  key={industry.title}
-                  className={`border-t py-5 transition-colors duration-300 ${
-                    isActive ? "border-black" : "border-black/15"
-                  }`}
-                >
-                  <button
-                    onClick={() => setActiveIndustry(index)}
-                    className="flex w-full items-center justify-between text-left"
-                  >
-                    <span
-                      className={`font-dm-mono text-lg sm:text-xl lg:text-[1.9rem] transition-all duration-300 ${
-                        isActive
-                          ? "text-black"
-                          : "text-black/45 hover:text-black/70"
-                      }`}
-                    >
-                      {industry.title}
-                    </span>
-
-                    <span
-                      className={`flex h-10 w-10 items-center justify-center font-dm-mono text-3xl transition-all duration-300 ${
-                        isActive ? "rotate-45 text-black" : "text-black/50"
-                      }`}
-                    >
-                      +
-                    </span>
-                  </button>
-                  <div
-                    className={`grid transition-all duration-500 ${
-                      isActive
-                        ? "mt-6 grid-rows-[1fr] opacity-100"
-                        : "grid-rows-[0fr] opacity-0"
-                    }`}
-                  >
-                    <div className="overflow-hidden">
-                      <p className="max-w-xl font-dm-mono text-[14px] leading-8 text-black/60">
-                        {industry.description}
-                      </p>
-                    </div>
-                  </div>
-                </div>
-              );
-            })}
-          </div> */}
-          {/* Right */}
           <div className="space-y-2 pt-10 lg:pt-20">
             {industries.map((industry, index) => {
               const isActive = activeIndustry === index;

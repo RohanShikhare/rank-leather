@@ -44,7 +44,7 @@ export default function Footer() {
               className="transition-colors duration-300 hover:text-white"
             >
               +91 96191 84901
-            </Link>
+            </Link> <br/>
             <Link
               href="tel:+919869184901"
               className="transition-colors duration-300 hover:text-white"

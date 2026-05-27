@@ -1,11 +1,49 @@
+import type { Metadata } from "next";
 import Banner from "@/components/Banner";
 import SectionTitle from "@/components/SectionTitle";
 import ContactForm from "@/components/ContactForm";
 
-export const metadata = {
-  title: "Contact | RANK Leather",
+export const metadata: Metadata = {
+  title: "Contact RANK | Leather Studio Consultations & Inquiries",
   description:
-    "Contact RANK for studio consultations, bespoke inquiries, and luxury leather collaborations.",
+    "Get in touch with RANK Leather for product inquiries, bespoke leather solutions, and corporate gifting. Contact us at +91 96191 84901 or khadeaditya22@gmail.com.",
+  keywords: [
+    "contact RANK leather",
+    "leather consultations",
+    "bespoke leather",
+    "corporate gifting inquiries",
+    "leather customization",
+    "RANK Mumbai",
+  ],
+  authors: [
+    { name: "RANK Leather", url: "https://rankleather.in" },
+  ],
+  openGraph: {
+    type: "website",
+    locale: "en_IN",
+    url: "https://rankleather.in/contact",
+    siteName: "RANK Leather",
+    title: "Contact RANK | Leather Studio Consultations & Inquiries",
+    description:
+      "Connect with RANK's leather studio for bespoke inquiries, product questions, and collaboration opportunities.",
+    images: [
+      {
+        url: "https://rankleather.in/images/banner/contact-desktop.webp",
+        width: 1200,
+        height: 630,
+        alt: "Contact RANK Leather Studio",
+        type: "image/webp",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Contact RANK | Leather Studio Consultations & Inquiries",
+    description:
+      "Get in touch with RANK Leather for consultations, inquiries, and bespoke leather solutions.",
+    images: ["https://rankleather.in/images/banner/contact-desktop.webp"],
+    creator: "@rankleather.in",
+  },
 };
 
 export default function ContactPage() {

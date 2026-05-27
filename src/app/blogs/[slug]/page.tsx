@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import Image from "next/image";
 import { notFound } from "next/navigation";
 import Banner from "@/components/Banner";
@@ -14,17 +15,61 @@ export async function generateMetadata({
   params,
 }: {
   params: Promise<{ slug: string }>;
-}) {
+}): Promise<Metadata> {
   const { slug } = await params;
 
   const post = blogPosts.find((entry) => entry.slug === slug);
 
-  return {
-    title: post ? `${post.title} | RANK Leather` : "Blog | RANK Leather",
+  if (!post) {
+    return {
+      title: "Blog Post Not Found | RANK Leather",
+      description: "The blog post you're looking for doesn't exist.",
+    };
+  }
 
-    description: post
-      ? post.excerpt
-      : "Read insightful stories from the RANK leather studio.",
+  const postUrl = `https://rankleather.in/blogs/${post.slug}`;
+
+  return {
+    title: `${post.title} | RANK Leather Blog`,
+    description: post.excerpt,
+    keywords: [
+      "leather",
+      "craftsmanship",
+      "leather care",
+      "leather manufacturing",
+      "design",
+      post.title.toLowerCase(),
+    ],
+    authors: [
+      { name: "RANK Leather", url: "https://rankleather.in" },
+    ],
+    creator: "RANK Leather",
+    openGraph: {
+      type: "article",
+      locale: "en_IN",
+      url: postUrl,
+      siteName: "RANK Leather",
+      title: post.title,
+      description: post.excerpt,
+      publishedTime: new Date(post.date).toISOString(),
+      authors: ["RANK Leather"],
+      images: [
+        {
+          url: `https://rankleather.in${post.image}`,
+          width: 1200,
+          height: 630,
+          alt: post.alt,
+          type: "image/webp",
+        },
+      ],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: post.title,
+      description: post.excerpt,
+      images: [`https://rankleather.in${post.image}`],
+      creator: "@rankleather.in",
+    },
   };
 }
 

@@ -1,11 +1,54 @@
+import type { Metadata } from "next";
 import Banner from "@/components/Banner";
 import SectionTitle from "@/components/SectionTitle";
 import ProductCard from "@/components/ProductCard";
 import { productCategories } from "@/data/categories";
 
-export const metadata = {
-  title: "Products | RANK Leather",
-  description: "Explore RANK’s premium leather categories and discover curated collections for modern luxury.",
+export const metadata: Metadata = {
+  title: "Premium Leather Products | Wallets, Bags & Accessories | RANK",
+  description:
+    "Shop RANK's premium handcrafted leather collections. Wallets, bags, belts, backpacks, laptop bags, duffel bags, ladies bags, and corporate gifting sets.",
+  keywords: [
+    "leather wallets",
+    "leather bags",
+    "leather belts",
+    "leather backpacks",
+    "laptop bags",
+    "duffel bags",
+    "leather accessories",
+    "premium leather",
+    "handcrafted leather",
+    "corporate gifting",
+  ],
+  authors: [
+    { name: "RANK Leather", url: "https://rankleather.in" },
+  ],
+  openGraph: {
+    type: "website",
+    locale: "en_IN",
+    url: "https://rankleather.in/products",
+    siteName: "RANK Leather",
+    title: "Premium Leather Products | Wallets, Bags & Accessories | RANK",
+    description:
+      "Explore RANK's curated collections of premium handcrafted leather products for modern businesses and everyday luxury.",
+    images: [
+      {
+        url: "https://rankleather.in/images/banner/product-desktop.webp",
+        width: 1200,
+        height: 630,
+        alt: "RANK Leather Product Collections",
+        type: "image/webp",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Premium Leather Products | Wallets, Bags & Accessories | RANK",
+    description:
+      "Explore RANK's premium handcrafted leather collections including wallets, bags, and accessories.",
+    images: ["https://rankleather.in/images/banner/product-desktop.webp"],
+    creator: "@rankleather.in",
+  },
 };
 
 export default function ProductsPage() {

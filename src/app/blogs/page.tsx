@@ -1,11 +1,53 @@
+import type { Metadata } from "next";
 import Banner from "@/components/Banner";
 import SectionTitle from "@/components/SectionTitle";
 import BlogCard from "@/components/BlogCard";
 import { blogPosts } from "@/data/blogs";
 
-export const metadata = {
-  title: "Blogs | RANK Leather",
-  description: "Read insights from the RANK on leather craft, color, and design philosophy.",
+export const metadata: Metadata = {
+  title: "Leather Craft & Design Blog | Stories from RANK Studio",
+  description:
+    "Read expert insights on leather manufacturing, material quality, leather care, and premium craftsmanship from the RANK leather studio.",
+  keywords: [
+    "leather blog",
+    "leather craft",
+    "leather care guide",
+    "leather manufacturing",
+    "premium leather",
+    "leather design",
+    "leather quality",
+    "handcrafted leather",
+    "leather artisan",
+  ],
+  authors: [
+    { name: "RANK Leather", url: "https://rankleather.in" },
+  ],
+  openGraph: {
+    type: "website",
+    locale: "en_IN",
+    url: "https://rankleather.in/blogs",
+    siteName: "RANK Leather",
+    title: "Leather Craft & Design Blog | Stories from RANK Studio",
+    description:
+      "Discover expert insights on leather manufacturing, material quality, and premium craftsmanship from RANK's design studio.",
+    images: [
+      {
+        url: "https://rankleather.in/images/banner/blog-desktop.webp",
+        width: 1200,
+        height: 630,
+        alt: "RANK Leather Blog Stories",
+        type: "image/webp",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Leather Craft & Design Blog | Stories from RANK Studio",
+    description:
+      "Read expert insights on leather manufacturing, care, and premium craftsmanship from RANK.",
+    images: ["https://rankleather.in/images/banner/blog-desktop.webp"],
+    creator: "@rankleather.in",
+  },
 };
 
 export default function BlogsPage() {

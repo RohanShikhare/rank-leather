@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import Image from "next/image";
 import Banner from "@/components/Banner";
 import SectionTitle from "@/components/SectionTitle";
@@ -6,10 +7,48 @@ import { productCategories } from "@/data/categories";
 import FeaturedProducts from "@/components/FeaturedProducts";
 import Story from "@/../public/images/story.webp";
 
-export const metadata = {
-  title: "About | RANK Leather",
+export const metadata: Metadata = {
+  title: "About RANK | Leather Manufacturing Heritage & Craftsmanship",
   description:
-    "Learn about RANK’s heritage, founders, and design philosophy behind the luxury leather portfolio.",
+    "Learn about RANK's heritage, founders Raju Khade and Aditya Khade, and our commitment to premium leather craftsmanship since day one.",
+  keywords: [
+    "leather manufacturer",
+    "craftsmanship",
+    "leather heritage",
+    "premium manufacturing",
+    "founders",
+    "leather quality",
+    "Indian leather goods",
+  ],
+  authors: [
+    { name: "RANK Leather", url: "https://rankleather.in" },
+  ],
+  openGraph: {
+    type: "website",
+    locale: "en_IN",
+    url: "https://rankleather.in/about",
+    siteName: "RANK Leather",
+    title: "About RANK | Leather Manufacturing Heritage & Craftsmanship",
+    description:
+      "Discover RANK's story: decades of leather manufacturing excellence, craftsmanship, and commitment to quality.",
+    images: [
+      {
+        url: "https://rankleather.in/images/banner/about-desktop.webp",
+        width: 1200,
+        height: 630,
+        alt: "RANK Leather Manufacturing Story",
+        type: "image/webp",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "About RANK | Leather Manufacturing Heritage & Craftsmanship",
+    description:
+      "Discover RANK's story: decades of leather manufacturing excellence and premium craftsmanship.",
+    images: ["https://rankleather.in/images/banner/about-desktop.webp"],
+    creator: "@rankleather.in",
+  },
 };
 
 const founders = [

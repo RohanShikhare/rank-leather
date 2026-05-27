@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import Banner from "@/components/Banner";
 import SectionTitle from "@/components/SectionTitle";
 import TestimonialCard from "@/components/TestimonialCard";
@@ -10,10 +11,56 @@ import Image from "next/image";
 import RankStore from "@/../public/images/rank-store.webp";
 import FeaturedProducts from "@/components/FeaturedProducts";
 
-export const metadata = {
-  title: "RANK | Manufacturer of Leather & Faux Leather Goods",
+export const metadata: Metadata = {
+  title: "RANK | Premium Leather & Faux Leather Manufacturer",
   description:
-    "RANK is a premium leather brand showcasing bespoke collections, refined product categories, and artisanal craftsmanship.",
+    "RANK manufactures premium handcrafted leather and faux leather goods. Explore our collections of wallets, bags, belts, and corporate gifting solutions.",
+  keywords: [
+    "leather manufacturer",
+    "leather bags",
+    "leather wallets",
+    "handcrafted leather",
+    "corporate gifting",
+    "premium leather goods",
+    "leather accessories",
+    "faux leather products",
+  ],
+  authors: [
+    { name: "RANK Leather", url: "https://rankleather.in" },
+  ],
+  creator: "RANK Leather",
+  publisher: "RANK Leather",
+  formatDetection: {
+    email: true,
+    telephone: true,
+    address: true,
+  },
+  openGraph: {
+    type: "website",
+    locale: "en_IN",
+    url: "https://rankleather.in",
+    siteName: "RANK Leather",
+    title: "RANK | Premium Leather & Faux Leather Manufacturer",
+    description:
+      "Discover RANK's premium handcrafted leather collections including wallets, bags, belts, and corporate gifting solutions.",
+    images: [
+      {
+        url: "https://rankleather.in/images/banner/home-desktop.webp",
+        width: 1200,
+        height: 630,
+        alt: "RANK Leather Premium Collections",
+        type: "image/webp",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "RANK | Premium Leather & Faux Leather Manufacturer",
+    description:
+      "Discover RANK's premium handcrafted leather collections including wallets, bags, belts, and corporate gifting solutions.",
+    images: ["https://rankleather.in/images/banner/home-desktop.webp"],
+    creator: "@rankleather.in",
+  },
 };
 
 export default function HomePage() {
