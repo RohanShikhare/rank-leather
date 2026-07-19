@@ -58,7 +58,7 @@ export default function Banner({
             </div>
           </>
         )}
-        <div className={`absolute inset-0 ${overlay}`} />
+        <div className={`absolute inset-0 bg-transparent sm:bg-black/70`} />
       </div>
       <div className="relative mx-auto flex min-h-screen max-w-7xl flex-col justify-end px-6 pb-18 pt-24 sm:px-8 lg:px-12 lg:pb-32">
         <motion.div
